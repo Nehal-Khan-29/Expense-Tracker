@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="icon.png">   
+    <title>Get It Done</title>
+    <link rel="stylesheet" href="todostyle.css">
+</head>
+
+<body>
+    <div class="content">
+        <div class="front" id="front">
+            <h1 class="todo-main">Expense Tracker</h1>
+            <div class="buton-main">
+                <button class="household-btn" onclick="showHousehold()">Home</button>
+            </div>
+        </div>
+
+        <div class="household" id="household">
+
+            <div class="inputs">
+                <div class="headin">
+                    <p class="headin1"><span>DATE</span></p>
+                    <p class="headin2"><span>TIME</span></p>
+                    <p class="sp1"><span>WORK</span></p>
+                    <p class="headin3"><span>EXPENDITURE</span></p>
+                </div>
+
+                <div class="input1"> 
+                    <input type="date" class="date" id="date">
+                    <input type="time" class="time" id="time">
+                    <input type="text" class="topic" id="topic">
+                    <input type="text" class="des" id="des">
+                    <button class="addbtn" id="addbtn" onclick="addTodo()">ADD</button>
+                    <button id="clrall" class="clrall" onclick="clearAll()"> CLEAR ALL </button>
+                </div>
+
+            </div>
+
+            <ul class="tasks" id="tasks"></ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+    <script src="todojs.js"></script>
+</body>
+</html>
