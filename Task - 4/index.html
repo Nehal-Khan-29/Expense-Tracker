@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PaLM - Chat Bot</title>
+    <title>Challenge - Chat Bot</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -79,11 +79,11 @@
 
     <script>
         let apiKeyvalue;
-
+    
         function openUrl1() {
             window.open("https://platform.openai.com/account/api-keys");
         }
-
+    
         document.getElementById("apiKeyForm").addEventListener("submit", function(event) {
             event.preventDefault();
             apiKeyvalue = document.getElementById("apiKey").value;
@@ -94,7 +94,7 @@
                 document.getElementById("chatInterface").style.display = "block";
             }
         });
-
+    
         function submitText() {
             const userInput = document.getElementById("userInput").value;
             if (!userInput.trim()) {
@@ -106,10 +106,10 @@
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": `Bearer ${apiKeyvalue}` 
+                        "Authorization": `Bearer ${apiKeyvalue}`
                     },
                     body: JSON.stringify({
-                        model: "gpt-3.5-turbo",
+                        model: "gpt-3.5-turbo-instruct",
                         messages: [{role: "user", content: userInput}],
                     })
                 }
@@ -124,12 +124,12 @@
             }
         }
         
-
+    
         function clearText() {
             document.getElementById("userInput").value = "";
             document.getElementById("aiResponse").value = "";
         }
-
+    
         function copyOutput() {
             const aiResponse = document.getElementById("aiResponse");
             aiResponse.select();
